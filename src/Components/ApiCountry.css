@@ -2,10 +2,32 @@
     text-align: center;
 }
 
+.input {
+    margin-top: 40px;
+    width: 100%;
+    max-width: 240px;
+    height: 17px;
+    padding: 12px;
+    border-radius: 12px;
+    border: 1.5px solid lightgrey;
+    outline: none;
+    transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+    box-shadow: 0px 0px 20px -18px;
+}
+  
+.input:hover {
+    border: 2px solid lightgrey;
+    box-shadow: 0px 0px 20px -17px;
+}
+  
+.input:focus {
+    border: 2px solid grey;
+}
+
 .apiCountryCard{
-    margin-top: 100px;
+    margin-top: 40px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
     justify-content: center;
     gap: 10px;
 }
@@ -14,5 +36,11 @@
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
     margin: 0 10px;
     border-radius: 15px;
-    
+    padding: 10px;
+    text-align: center;
+    background-color: blueviolet;
+}
+
+.apiCountryCard div img{
+    width: 100px;
 }

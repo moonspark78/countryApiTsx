@@ -15,6 +15,7 @@ type Countries = {
 
 export const ApiCountry = () => {
     const [countries, setCountries] = useState<Countries[]>([])
+    const [searchCountry, setSearchCountry] = useState("")
 
 
 
@@ -35,11 +36,15 @@ export const ApiCountry = () => {
   return (
     <div className='apiCountry'>
         <h2>ApiCountry</h2>
+
+        <input placeholder="Searth the Country data..." type="text" name="text" className="input"/>
+
         <div className='apiCountryCard'>
             {
                 countries.map((country) =>(
                     <div>
-                    <p>{country.name.common}</p>
+                        <p>{country.name.common}</p>
+                        <img src={country.flags.png} alt="" />
                     </div>
             ))}
         </div>

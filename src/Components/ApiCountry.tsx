@@ -29,6 +29,9 @@ export const ApiCountry = () => {
         fetchData();
     },[]);
 
+    const filteredCountries = countries.filter(country => 
+        country.name.common.toLocaleLowerCase().includes(searchCountry.toLocaleLowerCase()))
+
 
 
 
@@ -37,7 +40,14 @@ export const ApiCountry = () => {
     <div className='apiCountry'>
         <h2>ApiCountry</h2>
 
-        <input placeholder="Searth the Country data..." type="text" name="text" className="input"/>
+        <input 
+                placeholder="Searth the Country data..." 
+                type="text" 
+                name="text" 
+                className="input"
+                value={searchCountry}
+                onChange={(e) => setSearchCountry(e.target.value)}
+        />
 
         <div className='apiCountryCard'>
             {

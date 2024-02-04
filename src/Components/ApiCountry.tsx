@@ -17,6 +17,8 @@ export const ApiCountry = () => {
     const [countries, setCountries] = useState<Countries[]>([])
     const [searchCountry, setSearchCountry] = useState("")
 
+   
+
 
 
     useEffect(() => {
@@ -51,7 +53,7 @@ export const ApiCountry = () => {
 
         <div className='apiCountryCard'>
             {
-                countries.map((country) =>(
+                filteredCountries.map((country) =>(
                     <div>
                         <p>{country.name.common}</p>
                         <img src={country.flags.png} alt="" />

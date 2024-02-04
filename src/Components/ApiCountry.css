@@ -16,12 +16,12 @@
 }
   
 .input:hover {
-    border: 2px solid lightgrey;
+    border: 2px solid rgb(181, 11, 11);
     box-shadow: 0px 0px 20px -17px;
 }
   
 .input:focus {
-    border: 2px solid grey;
+    border: 2px solid rgb(195, 34, 34);
 }
 
 .apiCountryCard{

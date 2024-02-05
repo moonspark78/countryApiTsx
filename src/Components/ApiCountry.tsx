@@ -1,17 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import "./ApiCountry.css"
+import {Countries} from "../models/CountriesTypes"
 /* https://restcountries.com/v3.1/all */
 
-type Countries = {
-    name: {
-        common: string;
-    };
-    population: number;
-    region: string;
-    flags: {
-        png: string;
-    };
-}
 
 export const ApiCountry = () => {
     const [countries, setCountries] = useState<Countries[]>([])
@@ -53,8 +44,8 @@ export const ApiCountry = () => {
 
         <div className='apiCountryCard'>
             {
-                filteredCountries.map((country) =>(
-                    <div>
+                filteredCountries.map((country, index) =>(
+                    <div key={index}>
                         <p>{country.name.common}</p>
                         <img src={country.flags.png} alt="" />
                     </div>

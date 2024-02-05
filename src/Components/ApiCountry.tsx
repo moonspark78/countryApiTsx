@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import "./ApiCountry.css"
-import {Countries} from "../models/CountriesTypes"
+import {CountriesType} from "../models/CountriesTypes"
 import { Link } from 'react-router-dom'
 /* https://restcountries.com/v3.1/all */
 
 
 export const ApiCountry = () => {
-    const [countries, setCountries] = useState<Countries[]>([])
+    /* const [countries, setCountries] = useState<Countries[]>([]) */
+    const {countries, setCountries} = useCryptoContex<CountriesType[]>([])
     const [searchCountry, setSearchCountry] = useState("")
 
 
@@ -20,7 +21,7 @@ export const ApiCountry = () => {
         fetchData();
     },[]);
 
-    const filteredCountries = countries.filter(country => 
+    const filteredCountries = countries.filter(country  => 
         country.name.common.toLocaleLowerCase().includes(searchCountry.toLocaleLowerCase()))
 
 
@@ -42,7 +43,7 @@ export const ApiCountry = () => {
 
         <div className='apiCountryCard'>
             {
-                filteredCountries.map((country, index) =>(
+                filteredCountries.map((country:CountriesType, index) =>(
                     <Link to={`/country/${country.id}`}> 
                         <div key={index}>
                             <p>{country.name.common}</p>
@@ -54,3 +55,7 @@ export const ApiCountry = () => {
     </div>
   )
 }
+function useCryptoContex<T>(arg0: never[]): { countries: any; setCountries: any } {
+    throw new Error('Function not implemented.')
+}
+

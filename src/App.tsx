@@ -4,15 +4,18 @@ import './App.css';
 import { ApiCountry } from './Components/ApiCountry';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import {Details} from "./Components/Details"
+import { CountriesProvider } from './Context/countriesContext';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<ApiCountry/>}/>
-        <Route path='/details' element={ <Details/>}/>
-      </Routes>
+        <CountriesProvider>
+          <Routes>
+            <Route path='/' element={<ApiCountry/>}/>
+            <Route path='/details' element={ <Details/>}/>
+          </Routes>
+        </CountriesProvider>
       </BrowserRouter>
     </div>
   );

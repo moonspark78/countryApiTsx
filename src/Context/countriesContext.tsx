@@ -1,13 +1,14 @@
-import { Children, createContext, useContext, useState } from "react";
-import { Countries } from "../models/CountriesTypes";
+import { createContext, useContext, useState } from "react";
+import { CountriesType } from "../models/CountriesTypes";
 
 
-const CountriesCotext = createContext<Countries[]>([]);
+
+const CountriesCotext = createContext();
 export const useCountriesCotext = () => useContext(CountriesCotext);
 
-export const CountriesProvider = ({children}) =>{
+export const CountriesProvider = ({children}:  { children: React.ReactNode }) =>{
 
-    const [countries, setCountries] = useState<Countries[]>([])
+    const [countries, setCountries] = useState<CountriesType[]>([])
 
     const contextValue ={
         countries,

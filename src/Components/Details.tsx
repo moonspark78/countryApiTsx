@@ -1,8 +1,13 @@
 import React from 'react'
 import "./Details.css"
 import logo from '../logo.svg';
+import { useParams } from 'react-router-dom';
 
 export const Details = () => {
+    const {id} = useParams();
+
+
+
   return (
     <div className='details'>
         <h1>ApiCountry Details</h1>

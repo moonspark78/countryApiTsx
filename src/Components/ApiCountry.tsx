@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import "./ApiCountry.css"
 import {Countries} from "../models/CountriesTypes"
+import { Link } from 'react-router-dom'
 /* https://restcountries.com/v3.1/all */
 
 
 export const ApiCountry = () => {
     const [countries, setCountries] = useState<Countries[]>([])
     const [searchCountry, setSearchCountry] = useState("")
-
-   
-
 
 
     useEffect(() => {
@@ -45,10 +43,12 @@ export const ApiCountry = () => {
         <div className='apiCountryCard'>
             {
                 filteredCountries.map((country, index) =>(
-                    <div key={index}>
-                        <p>{country.name.common}</p>
-                        <img src={country.flags.png} alt="" />
-                    </div>
+                    <Link to={`/country/${country.id}`}> 
+                        <div key={index}>
+                            <p>{country.name.common}</p>
+                            <img src={country.flags.png} alt="" />
+                        </div>
+                    </Link> 
             ))}
         </div>
     </div>

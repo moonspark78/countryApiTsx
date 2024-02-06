@@ -1,4 +1,5 @@
 export type CountriesType = {
+    id: number;
     name: {
         common: string;
     };

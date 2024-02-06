@@ -44,7 +44,7 @@ export const ApiCountry = () => {
 
         <div className='apiCountryCard'>
             {
-                filteredCountries.map((country:CountriesType, index) =>(
+                filteredCountries.map((country:CountriesType, index: number) =>(
                     <Link to={`/country/${country.id}`}> 
                         <div key={index}>
                             <p>{country.name.common}</p>

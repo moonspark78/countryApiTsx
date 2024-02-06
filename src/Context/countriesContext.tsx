@@ -1,10 +1,17 @@
 import { createContext, useContext, useState } from "react";
 import { CountriesType } from "../models/CountriesTypes";
 
+type CountriesContextValue = {
+    countries: CountriesType[];
+  };
 
 
-const CountriesCotext = createContext();
-export const useCountriesCotext = () => useContext(CountriesCotext);
+
+export const CountriesContext = createContext<CountriesContextValue>({
+    countries: [],
+    setCountries: () => {} 
+});
+export const useCountriesContext = () => useContext(CountriesContext);
 
 export const CountriesProvider = ({children}:  { children: React.ReactNode }) =>{
 
@@ -16,8 +23,8 @@ export const CountriesProvider = ({children}:  { children: React.ReactNode }) =>
     }
     
     return (
-        <CountriesCotext.Provider value={contextValue}>
+        <CountriesContext.Provider value={contextValue}>
             {children}
-        </CountriesCotext.Provider>
+        </CountriesContext.Provider>
     )
 };

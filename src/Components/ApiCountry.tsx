@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import "./ApiCountry.css"
 import {CountriesType} from "../models/CountriesTypes"
+import {CountriesContext} from "../Context/countriesContext"
 import { Link } from 'react-router-dom'
 /* https://restcountries.com/v3.1/all */
 
 
 export const ApiCountry = () => {
     /* const [countries, setCountries] = useState<Countries[]>([]) */
-    const {countries, setCountries} = useCryptoContex<CountriesType[]>([])
+    const {countries, setCountries} = useContext(CountriesContext)
     const [searchCountry, setSearchCountry] = useState("")
 
 
@@ -21,7 +22,7 @@ export const ApiCountry = () => {
         fetchData();
     },[]);
 
-    const filteredCountries = countries.filter(country  => 
+    const filteredCountries = countries.filter((country: CountriesType)  => 
         country.name.common.toLocaleLowerCase().includes(searchCountry.toLocaleLowerCase()))
 
 
@@ -55,7 +56,3 @@ export const ApiCountry = () => {
     </div>
   )
 }
-function useCryptoContex<T>(arg0: never[]): { countries: any; setCountries: any } {
-    throw new Error('Function not implemented.')
-}
-

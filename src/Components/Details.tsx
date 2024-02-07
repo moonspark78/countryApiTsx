@@ -1,5 +1,5 @@
 import "./Details.css"
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { useCountriesContext } from '../Context/countriesContext';
 import { CountriesType } from "../models/CountriesTypes";
 
@@ -16,7 +16,9 @@ export const Details = () => {
 
   return (
     <div className='details'>
-        <h1>ApiCountry Details</h1>
+        <Link to="/">
+            <h1>ApiCountry Details</h1>  
+        </Link>
         {country ? (
                 <div className='dCard'>
                     <div className='text'>

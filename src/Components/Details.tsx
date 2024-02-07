@@ -5,6 +5,10 @@ import { CountriesType } from "../models/CountriesTypes";
 
 export const Details = () => {
     const { countries } = useCountriesContext();
+    const { fifaCode } = useParams();
+
+    // Recherche du pays correspondant au code "fifa" dans les paramètres de l'URL
+    const country = countries.find((country: CountriesType) => country.fifa === fifaCode);
 
 
 

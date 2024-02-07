@@ -8,4 +8,5 @@ export type CountriesType = {
     flags: {
         png: string;
     };
+    fifa: string;
 }

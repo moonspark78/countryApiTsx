@@ -45,8 +45,8 @@ export const ApiCountry = () => {
         <div className='apiCountryCard'>
             {
                 filteredCountries.map((country:CountriesType, index: number) =>(
-                    <Link to={`/country/${country.fifa}`}> 
-                        <div key={index}>
+                    <Link to={`/details/${country.fifa}`} key={index}> 
+                        <div>
                             <p>{country.name.common}</p>
                             <img src={country.flags.png} alt="" />
                         </div>

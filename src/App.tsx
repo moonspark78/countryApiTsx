@@ -13,7 +13,7 @@ function App() {
         <CountriesProvider>
           <Routes>
             <Route path='/' element={<ApiCountry/>}/>
-            <Route path='/details/:id' element={ <Details/>}/>
+            <Route path='/details/:fifaCode' element={ <Details/>}/>
           </Routes>
         </CountriesProvider>
       </BrowserRouter>

@@ -3,12 +3,14 @@ import { useParams } from 'react-router-dom';
 import { useCountriesContext } from '../Context/countriesContext';
 import { CountriesType } from "../models/CountriesTypes";
 
+
 export const Details = () => {
     const { countries } = useCountriesContext();
     const { fifaCode } = useParams();
 
     // Recherche du pays correspondant au code "fifa" dans les paramètres de l'URL
     const country = countries.find((country: CountriesType) => country.fifa === fifaCode);
+    
 
 
 
@@ -24,7 +26,7 @@ export const Details = () => {
                         {/* Vous devrez peut-être ajuster cela en fonction de la structure de vos données */}
                     </div>
                     {/* Ajoutez d'autres informations du pays si nécessaire */}
-                    <img src={country.flags.flags} alt="" style={{width: "100px"}} />
+                    <img src={country.flags.png} alt="" style={{width: "100px"}} />
                 </div>
             ) : (
                 <p>Country not found</p>
